@@ -1,1 +1,1 @@
-# compositionalmarkov
+# Compositional Markov
