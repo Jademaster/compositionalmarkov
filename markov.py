@@ -1,19 +1,18 @@
 import numpy as np
 
 class Openmat:
+
     def __init__(self,array,inp,out):
         self.mat=array
         self.inp=inp
         self.out=out
 
-def blackbox(array,inp, out):
-    print(len(out))
-    forget= np.zeros((len(inp),len(out)))
-    print(forget.shape)
-    for a in range(len(inp)):
-        for b in range(len(out)):
-            forget[a,b] = array[inp[a],out[b]]
-    return forget
+    def blackbox(self):
+        forget= np.zeros((len(self.inp),len(self.out)))
+        for a in range(len(self.inp)):
+            for b in range(len(self.out)):
+                forget[a,b] = self.mat[self.inp[a],self.out[b]]
+        return forget
 
 
 def mult(m1,m2):
@@ -37,16 +36,18 @@ def compose(openmat1,openmat2):
     composite=np.zeros((size,size))
     composite=np.maximum(extend1,extend2)
     return composite
+
+#compute the most likely path which occurs in n-steps
    
 a=np.random.rand(3,3)
 b=np.random.rand(3,3)
 
-in1= [0] 
-out1=[1]
+in1= [0,1] 
+out1=[0,1]
 in2=[2]
 out2=[0,1]
 m1=Openmat(a,in1,out1)
 m2=Openmat(b,in2,out2)
-print(compose(m1,m2))
+print(m1.blackbox())
 
 
