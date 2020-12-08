@@ -15,7 +15,7 @@ Transition matrices are represented by numpy arrays and are equipped with bounda
 >>> m1 = Openmat(a,ina,outa)
 >>> m2 = Openmat(b,inb,outb)
 ```
-Next the open Markov processes are precompiled to compute the most likely paths within each open Markov processes. The parameter of precompile method indicates the maximum number of steps that you are interested in computing.
+Next the open Markov processes are precompiled to compute the most likely paths within each open Markov process. The parameter of the precompile method indicates the maximum number of steps that you are interested in computing.
 
 ```python
 >>> m1.precompile(10)
@@ -33,7 +33,7 @@ array([[0.8 , 0.2 , 0.1 , 0.72, 0.  , 0.  ],
        [0.  , 0.  , 0.  , 0.  , 0.82, 0.55]])
 ```
 
-and precompiled open matrices can be restricted to their inputs and outputs with the `blackbox()` command.
+Precompiled open matrices can be restricted to their inputs and outputs with the `blackbox()` command.
 
 ```python
 >>> m1.blackbox()
