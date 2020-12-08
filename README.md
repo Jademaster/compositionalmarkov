@@ -21,7 +21,7 @@ Next the open Markov processes are precompiled to compute the most likely paths 
 >>> m1.precompile(10)
 >>> m2.precompile(10)
 ```
-Open markov processes can be joined by identifing the vertices in `outa` with the vertices in `inb`.
+Open markov processes are joined by identifing the vertices in `outa` with the vertices in `inb`.
 
 ```python
 >>> compose(m1,m2)
@@ -33,7 +33,7 @@ array([[0.8 , 0.2 , 0.1 , 0.72, 0.  , 0.  ],
        [0.  , 0.  , 0.  , 0.  , 0.82, 0.55]])
 ```
 
-Precompiled open matrices can be restricted to their inputs and outputs with the `blackbox()` command.
+Precompiled open matrices are restricted to their inputs and outputs with the `blackbox()` command.
 
 ```python
 >>> m1.blackbox()
