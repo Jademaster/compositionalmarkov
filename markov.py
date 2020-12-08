@@ -67,19 +67,7 @@ def partitions(n):
 def nmostlikely(m1,m2,n):
     return listmax([mult(m1.blackbox(power=p[0]),m2.blackbox(power=p[1])) for p in partitions(n)])
    
-   
-a=np.random.rand(3,3)
-b=np.random.rand(3,3)
 
 
-in1= [0,1] 
-out1=[0,1]
-in2=[2,1]
-out2=[0,1]
-m1=Openmat(a,in1,out1)
-m2=Openmat(b,in2,out2)
-m1.precompile(5)
-m2.precompile(5)
-print(nmostlikely(m1,m2,5))
 
 
