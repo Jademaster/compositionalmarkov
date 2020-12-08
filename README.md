@@ -40,7 +40,7 @@ and precompiled open matrices can be restricted to their inputs and outputs with
 array([[0.1 , 0.72],
        [0.35, 0.12]])
 ```
-The following command computes the probabilities of the most likely paths which occur in 10 steps on the composite of `m1` and `m2`.
+The following command computes the probabilities of the most likely paths which occur in 10 steps between the inputs of `m1` and the outputs `m2`.
 
 ```python
 >>> nmostlikely(m1,m2,10)
