@@ -2,7 +2,7 @@
 
 This repository implements an algorithm for computing the most likely paths in a Markov process which occur in a fixed number of steps. This algorithm is compositional i.e. the computations it produces can be joined together to compute most likely paths on larger Markov chains. The algorithm requires that the transition matrices of your Markov process are joined in a **functional** way i.e. sinks of the first process must be joined with sources of the second process.
 
-Transition matrices are represented by numpy arrays and are equipped with boundaries via a class `Openmat`whose use is indicated below:.
+Transition matrices are represented by numpy arrays and are equipped with boundaries via a class `Openmat`whose use is indicated below.
 
 ```python
 >>> from markov import *
@@ -21,7 +21,7 @@ Next the open Markov processes are precompiled to compute the most likely paths 
 >>> m1.precompile(10)
 >>> m2.precompile(10)
 ```
-Open markov processes can be joined by identifing the vertices in `outa` with the vertices in `inb`
+Open markov processes can be joined by identifing the vertices in `outa` with the vertices in `inb`.
 
 ```python
 >>> compose(m1,m2)
@@ -33,14 +33,14 @@ array([[0.8 , 0.2 , 0.1 , 0.72, 0.  , 0.  ],
        [0.  , 0.  , 0.  , 0.  , 0.82, 0.55]])
 ```
 
-and precompiled open matrices can be restricted to their inputs and outputs with the `blackbox()` command
+and precompiled open matrices can be restricted to their inputs and outputs with the `blackbox()` command.
 
 ```python
 >>> m1.blackbox()
 array([[0.1 , 0.72],
        [0.35, 0.12]])
 ```
-The following command computes the probabilities of the most likely paths which occur in 10 steps on the composite of `m1` and `m2`
+The following command computes the probabilities of the most likely paths which occur in 10 steps on the composite of `m1` and `m2`.
 
 ```python
 >>> nmostlikely(m1,m2,10)
