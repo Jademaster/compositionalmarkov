@@ -1,11 +1,7 @@
 import numpy as np
 
-def listmax(mats):
-    runningmax=np.zeros(mats[0].shape)
-    for m in mats:
-        runningmax=np.maximum(m,runningmax)
-    return runningmax
-    
+
+#pointless comment  
 
 def mult(m1,m2):
     product= np.zeros((m1.shape[0],m2.shape[1]))
@@ -65,7 +61,7 @@ def partitions(n):
         return partition
       
 def nmostlikely(m1,m2,n):
-    return listmax([mult(m1.blackbox(power=p[0]),m2.blackbox(power=p[1])) for p in partitions(n)])
+    return np.stack([mult(m1.blackbox(power=p[0]),m2.blackbox(power=p[1])) for p in partitions(n)]).max(axis=0)
    
 
 
